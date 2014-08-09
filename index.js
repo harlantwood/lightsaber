@@ -1,6 +1,6 @@
 require('coffee-script/register');
 
-var _ = require('lodash');
+var _ = require('lodash-node');
 
 module.exports = _.merge(
   require('./lib/collection.coffee'),
@@ -9,5 +9,5 @@ module.exports = _.merge(
   require('./lib/object.coffee'),
   require('./lib/polyfill.coffee'),
   require('./lib/space.coffee'),
-  require('./lib/type.coffee'),
-};
+  require('./lib/type.coffee')
+);
