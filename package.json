@@ -1,6 +1,6 @@
 {
   "name": "lightsaber",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Lightweight utilities for Node.js or browser, written in coffeescript",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
   "license": "ISC",
   "dependencies": {
     "coffee-script": "^1.7.1",
-    "amdefine": "^0.1.0"
+    "amdefine": "^0.1.0",
+    "lodash-node": "2.4.1"
   },
   "repository": {
     "type": "git",

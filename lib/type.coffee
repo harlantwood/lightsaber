@@ -18,4 +18,4 @@ define (require, exports, module) ->
       '[object Undefined]': 'undefined'
     FRIENDLY_NAMES[Object::toString.call thing] or 'object'
 
-  module.exports = type
+  module.exports = { type }

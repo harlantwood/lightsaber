@@ -1,11 +1,13 @@
 require('coffee-script/register');
 
-module.exports = {
-  collection: require('./lib/collection.coffee'),
-  jquery:     require('./lib/jquery.coffee'),
-  log:        require('./lib/log.coffee'),
-  object:     require('./lib/object.coffee'),
-  polyfill:   require('./lib/polyfill.coffee'),
-  space:      require('./lib/space.coffee'),
-  type:       require('./lib/type.coffee'),
+var _ = require('lodash');
+
+module.exports = _.merge(
+  require('./lib/collection.coffee'),
+  require('./lib/jquery.coffee'),
+  require('./lib/log.coffee'),
+  require('./lib/object.coffee'),
+  require('./lib/polyfill.coffee'),
+  require('./lib/space.coffee'),
+  require('./lib/type.coffee'),
 };

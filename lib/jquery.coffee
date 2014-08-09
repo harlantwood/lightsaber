@@ -6,4 +6,4 @@ define (require, exports, module) ->
     throw 'jQuery is required but could not be found' unless jQuery?
     jQuery
   
-  module.exports = jquery
+  module.exports = { jquery }
