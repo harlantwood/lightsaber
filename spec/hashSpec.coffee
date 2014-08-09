@@ -1,5 +1,5 @@
-hash = require '../lib/hash'
-{ sha384 } = hash
+lightsaber = require '../index'
+{ sha384 } = lightsaber
 
 QUnit.module 'sha384'
 
