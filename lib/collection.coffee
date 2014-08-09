@@ -2,7 +2,7 @@
 
 define (require, exports, module) ->
 
-  { copy }          = require 'light/object'
+  { copy }          = require './object'
 
   add = (array, elements...) ->
     result = copy array
