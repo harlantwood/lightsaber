@@ -4,12 +4,14 @@
   "description": "Lightweight utilities for Node.js or browser, written in coffeescript",
   "main": "index.js",
   "scripts": {
+    "test": "qunit -c ./index.js -t ./spec/*Spec.coffee"
   },
   "author": "Harlan T Wood",
   "license": "ISC",
   "dependencies": {
     "coffee-script": "^1.7.1",
     "amdefine": "^0.1.0",
+    "node-forge": "^0.6.12",
     "lodash-node": "2.4.1"
   },
   "repository": {
@@ -17,9 +19,14 @@
     "url": "https://github.com/harlantwood/light.git"
   },
   "keywords": [
-    "log", "typeof", "collection"
+    "log",
+    "typeof",
+    "collection"
   ],
   "bugs": {
     "url": "https://github.com/harlantwood/light/issues"
+  },
+  "devDependencies": {
+    "qunit": "^0.7.2"
   }
 }
