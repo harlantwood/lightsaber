@@ -2,7 +2,7 @@
 
 define (require, exports, module) ->
 
-  type              = require './type'
+  { type }          = require './type'
 
   log = (args...) ->
     for arg in args

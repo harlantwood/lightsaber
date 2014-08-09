@@ -2,8 +2,8 @@
 
 define (require, exports, module) ->
 
-  type              = require './type'
-  jquery            = require './jquery'
+  { type }          = require './type'
+  { jquery }        = require './jquery'
 
   keys = (object) ->
     if object? then Object.keys(object)
