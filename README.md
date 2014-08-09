@@ -1,6 +1,11 @@
-Light
-=====
+Lightsaber
+==========
 
-Lightweight utilities for Node.js or browser, written in coffeescript.
+Lightweight jedi utility toolbelt, written in coffeescript.
 
+Running Tests
+-------------
 
+    npm install
+    npm test
+    
