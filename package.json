@@ -1,7 +1,7 @@
 {
   "name": "lightsaber",
   "version": "0.1.5",
-  "description": "Lightweight utilities for Node.js or browser, written in coffeescript",
+  "description": "Lightweight jedi utility toolbelt, written in coffeescript",
   "main": "index.js",
   "scripts": {
     "test": "qunit -c ./index.js -t ./spec/*Spec.coffee"
