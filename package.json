@@ -1,0 +1,24 @@
+{
+  "name": "lightsaber",
+  "version": "0.0.1",
+  "description": "Lightweight utilities for Node.js or browser, written in coffeescript",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Harlan T Wood",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "amdefine": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harlantwood/light.git"
+  },
+  "keywords": [
+    "log", "typeof", "collection"
+  ],
+  "bugs": {
+    "url": "https://github.com/harlantwood/light/issues"
+  }
+}
