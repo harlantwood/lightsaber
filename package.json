@@ -22,7 +22,8 @@
   "keywords": [
     "log",
     "typeof",
-    "collection"
+    "collection",
+    "sha384"
   ],
   "bugs": {
     "url": "https://github.com/harlantwood/light/issues"
