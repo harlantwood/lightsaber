@@ -9,10 +9,11 @@
   "author": "Harlan T Wood",
   "license": "ISC",
   "dependencies": {
-    "coffee-script": "^1.7.1",
     "amdefine": "^0.1.0",
-    "node-forge": "^0.6.12",
-    "lodash-node": "2.4.1"
+    "coffee-script": "^1.8.0",
+    "jquery": "^2.1.1",
+    "lodash-node": "2.4.1",
+    "node-forge": "^0.6.12"
   },
   "repository": {
     "type": "git",
