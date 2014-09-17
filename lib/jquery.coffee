@@ -8,4 +8,6 @@ define (require, exports, module) ->
     else
       require "jquery"
   
-  module.exports = { jquery }
+  module.exports = 
+    jquery: jquery
+    $:      jquery
