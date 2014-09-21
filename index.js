@@ -10,5 +10,6 @@ module.exports = _.merge(
   require('./lib/object.coffee'),
   require('./lib/polyfill.coffee'),
   require('./lib/space.coffee'),
-  require('./lib/type.coffee')
+  require('./lib/type.coffee'),
+  require('./lib/verbiage.coffee')
 );
