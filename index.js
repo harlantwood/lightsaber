@@ -6,6 +6,7 @@ module.exports = _.merge(
   require('./lib/collection.coffee'),
   require('./lib/hash.coffee'),
   require('./lib/jquery.coffee'),
+  require('./lib/json.coffee'),
   require('./lib/log.coffee'),
   require('./lib/object.coffee'),
   require('./lib/polyfill.coffee'),
