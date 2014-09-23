@@ -4,18 +4,18 @@ define (require, exports, module) ->
 
   { type }          = require './type'
 
-  # argument `obj` can be an oject with one level of key/values deep only.
-  # values can be numeric, string, or array
-  canonical_json = (obj) -> 
-    pairs = for key in Object.keys(obj).sort()
-      val = obj[key]
-      if type(val) is 'object' 
-        throw "Error: Object depth of one expected"
-      else if type(val) is 'array'
-        "#{JSON.stringify key}:#{JSON.stringify val.sort()}"
-      else
-        "#{JSON.stringify key}:#{JSON.stringify val}"
-    "{#{pairs.join(',')}}"
+  canonical_json = (data) -> 
+    if type(data) is 'array'
+      elements = for element in data
+        canonical_json element
+      '[' + elements.sort().join(',') + ']'
+    else if type(data) is 'object' 
+      key_val_pairs = for key in Object.keys(data).sort()
+        val = data[key]
+        "#{JSON.stringify key}:#{canonical_json val}"
+      '{' + key_val_pairs.join(',') + '}'
+    else
+      JSON.stringify data
 
   module.exports = { 
     canonical_json 
