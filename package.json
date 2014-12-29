@@ -1,8 +1,8 @@
 {
   "name": "lightsaber",
-  "version": "0.1.12",
+  "version": "0.1.13-dev",
   "description": "Lightweight jedi utility toolbelt, written in coffeescript",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "qunit -c ./index.js -t ./spec/*Spec.coffee"
   },
@@ -12,8 +12,9 @@
     "amdefine": "^0.1.0",
     "coffee-script": "^1.8.0",
     "jquery": "^2.1.1",
+    "json-stable-stringify": "^1.0.0",
     "lodash-node": "2.4.1",
-    "node-forge": "^0.6.12"
+    "node-forge": "^0.6.16"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
     "log",
     "typeof",
     "collection",
-    "sha384"
+    "sha384",
+    "sha512"
   ],
   "bugs": {
     "url": "https://github.com/harlantwood/light/issues"

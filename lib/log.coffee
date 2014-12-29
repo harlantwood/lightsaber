@@ -8,6 +8,10 @@ define (require, exports, module) ->
     for arg in args
       console.log arg
 
+  err = (args...) ->
+    for arg in args
+      console.error arg
+
   p = plog = (args...) ->
     for arg in args
       log pretty arg
@@ -18,7 +22,7 @@ define (require, exports, module) ->
     else
       arg
 
-  pjson = (data) -> 
+  pjson = (data) ->
     json data, null, 4
 
   json = (data, stringify_args...) ->
@@ -27,4 +31,4 @@ define (require, exports, module) ->
     catch
       data
 
-  module.exports = { log, plog, p, pretty, json, pjson }
+  module.exports = { err, log, plog, p, pretty, json, pjson }

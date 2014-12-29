@@ -2,16 +2,25 @@
 
 define (require, exports, module) ->
 
-  { log }           = require './log'
+  { type }          = require './type'
+  { log, p }        = require './log'
 
-  indent =  (text, line_prefix='    ') ->
+  code = (text, line_prefix='    ') ->
+    log indent text, line_prefix
+
+  indent = (text, line_prefix='    ') ->
     lines = for line in text.split("\n")
       "#{line_prefix}#{line}"
     lines.join "\n"
 
-  # replace SHA-384 hex hashes with the first n characters of the hash only
+  # replace probable hex hashes with the first n characters of the hash only
   sane = (text, size=8) ->
-    text.replace /// \b([0-9a-f]{#{size}})[0-9a-f]{#{384/4-size}}\b ///g, "$1"
+    throw "expected string, got #{text}" unless type(text) is 'string'
+    stays = "[0-9a-f]{#{size}}"
+    goes = [128, 160, 256, 384, 512].map (bits) ->
+      "[0-9a-f]{#{ bits/4 - size }}"
+    .join '|'
+    text.replace /// \b(#{stays})(#{goes})\b ///g, "$1"
 
   say = (text) ->
     for line in text.split("\n")
@@ -21,6 +30,7 @@ define (require, exports, module) ->
     "'#{text}'"
 
   module.exports = {
+    code
     indent
     quote
     sane

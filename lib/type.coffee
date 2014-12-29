@@ -2,7 +2,7 @@
 
 define (require, exports, module) ->
 
-  # type(thing) -> type of 'thing' as string
+  # type(thing) -> returns the type of thing as a string
   # Replaces (broken) JS built in "typeof"
   #
   type = (thing) ->

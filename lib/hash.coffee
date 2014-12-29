@@ -4,8 +4,16 @@ define (require, exports, module) ->
 
   forge = require 'node-forge'
 
-  sha = (text, options) ->
-    options.algorithm ?= 'sha512'
+  hash = (text, algorithm='sha512') ->
+    _digest text, { algorithm }
+
+  sha384 = (text) ->
+    _digest(text, algorithm: 'sha384').hex
+
+  sha512 = (text) ->
+    _digest(text, algorithm: 'sha512').hex
+
+  _digest = (text, options) ->
     options.encoding ?= 'utf-8'
     message_digest = forge.md[options.algorithm].create()
     message_digest.update text, options.encoding
@@ -14,8 +22,8 @@ define (require, exports, module) ->
       hex: message_digest.digest().toHex()    
     }
 
-  sha384 = (text) ->
-    sha(text, algorithm: 'sha384').hex
-
-
-  module.exports = { sha384 }
+  module.exports = {
+    hash
+    sha384 
+    sha512
+  }
