@@ -1,4 +1,4 @@
-Lightsaber
+Lightsaber  [![Build](https://travis-ci.org/harlantwood/lightsaber.svg?branch=master)](https://travis-ci.org/harlantwood/lightsaber)
 ==========
 
 A lightweight jedi utility toolbelt, written in coffeescript.
