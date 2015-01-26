@@ -4,7 +4,7 @@
   "description": "Lightweight jedi utility toolbelt, written in coffeescript",
   "main": "lib/index.js",
   "scripts": {
-    "test": "qunit -c ./index.js -t ./spec/*Spec.coffee"
+    "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register spec"
   },
   "author": "Harlan T Wood",
   "license": "ISC",
@@ -30,6 +30,7 @@
     "url": "https://github.com/harlantwood/light/issues"
   },
   "devDependencies": {
-    "qunit": "^0.7.2"
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
   }
 }
