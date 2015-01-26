@@ -1,44 +1,40 @@
-`if (typeof define !== 'function') { var define = require('amdefine')(module) }`
+{ type }          = require './type'
+{ log, p }        = require './log'
 
-define (require, exports, module) ->
+code = (text, line_prefix='    ') ->
+  log indent text, line_prefix
 
-  { type }          = require './type'
-  { log, p }        = require './log'
+indent = (text, line_prefix='    ') ->
+  lines = for line in text.split("\n")
+    "#{line_prefix}#{line}"
+  lines.join "\n"
 
-  code = (text, line_prefix='    ') ->
-    log indent text, line_prefix
+# replace probable hex hashes with the first n characters of the hash only
+sane = (text, size=8) ->
+  throw "expected string, got #{text}" unless type(text) is 'string'
+  stays = "[0-9a-f]{#{size}}"
+  goes = [128, 160, 256, 384, 512].map (bits) ->
+    "[0-9a-f]{#{ bits/4 - size }}"
+  .join '|'
+  text.replace ///
+      \b
+      (#{stays})
+      (#{goes})
+      \b
+    ///g,
+    "$1"
 
-  indent = (text, line_prefix='    ') ->
-    lines = for line in text.split("\n")
-      "#{line_prefix}#{line}"
-    lines.join "\n"
+say = (text) ->
+  for line in text.split("\n")
+    log line.trim()
 
-  # replace probable hex hashes with the first n characters of the hash only
-  sane = (text, size=8) ->
-    throw "expected string, got #{text}" unless type(text) is 'string'
-    stays = "[0-9a-f]{#{size}}"
-    goes = [128, 160, 256, 384, 512].map (bits) ->
-      "[0-9a-f]{#{ bits/4 - size }}"
-    .join '|'
-    text.replace ///
-        \b
-        (#{stays})
-        (#{goes})
-        \b
-      ///g,
-      "$1"
+quote  = (text) ->
+  "'#{text}'"
 
-  say = (text) ->
-    for line in text.split("\n")
-      log line.trim()
-
-  quote  = (text) ->
-    "'#{text}'"
-
-  module.exports = {
-    code
-    indent
-    quote
-    sane
-    say
-  }
+module.exports = {
+  code
+  indent
+  quote
+  sane
+  say
+}

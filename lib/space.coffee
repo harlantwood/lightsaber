@@ -1,13 +1,9 @@
-`if (typeof define !== 'function') { var define = require('amdefine')(module) }`
+move = (radius, angle) ->
+  x: Math.cos(angle) * radius
+  y: Math.sin(angle) * radius
 
-define (require, exports, module) ->
+distance = (x1, x2, y1, y2) -> Math.sqrt(square(x2-x1) + square(y2-y1))
 
-  move = (radius, angle) ->
-    x: Math.cos(angle) * radius
-    y: Math.sin(angle) * radius
+square = (n) -> n * n
 
-  distance = (x1, x2, y1, y2) -> Math.sqrt(square(x2-x1) + square(y2-y1))
-
-  square = (n) -> n * n
-
-  module.exports = { distance, move }
+module.exports = { distance, move }

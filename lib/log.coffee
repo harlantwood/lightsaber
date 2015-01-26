@@ -1,34 +1,30 @@
-`if (typeof define !== 'function') { var define = require('amdefine')(module) }`
+{ type }          = require './type'
 
-define (require, exports, module) ->
+log = (args...) ->
+  for arg in args
+    console.log arg
 
-  { type }          = require './type'
+err = (args...) ->
+  for arg in args
+    console.error arg
 
-  log = (args...) ->
-    for arg in args
-      console.log arg
+p = plog = (args...) ->
+  for arg in args
+    log pretty arg
 
-  err = (args...) ->
-    for arg in args
-      console.error arg
+pretty = (arg) ->
+  if type(arg) in [ 'array', 'object' ]
+    arg = pjson arg
+  else
+    arg
 
-  p = plog = (args...) ->
-    for arg in args
-      log pretty arg
+pjson = (data) ->
+  json data, null, 4
 
-  pretty = (arg) ->
-    if type(arg) in [ 'array', 'object' ]
-      arg = pjson arg
-    else
-      arg
+json = (data, stringify_args...) ->
+  try
+    JSON.stringify data, stringify_args...
+  catch
+    data
 
-  pjson = (data) ->
-    json data, null, 4
-
-  json = (data, stringify_args...) ->
-    try
-      JSON.stringify data, stringify_args...
-    catch
-      data
-
-  module.exports = { err, log, plog, p, pretty, json, pjson }
+module.exports = { err, log, plog, p, pretty, json, pjson }

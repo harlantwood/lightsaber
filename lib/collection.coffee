@@ -1,12 +1,8 @@
-`if (typeof define !== 'function') { var define = require('amdefine')(module) }`
+{ copy }          = require './object'
 
-define (require, exports, module) ->
+add = (array, elements...) ->
+  result = copy array
+  result.push elements...
+  result
 
-  { copy }          = require './object'
-
-  add = (array, elements...) ->
-    result = copy array
-    result.push elements...
-    result
-
-  module.exports = { add }
+module.exports = { add }
