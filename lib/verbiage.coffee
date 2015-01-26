@@ -20,7 +20,13 @@ define (require, exports, module) ->
     goes = [128, 160, 256, 384, 512].map (bits) ->
       "[0-9a-f]{#{ bits/4 - size }}"
     .join '|'
-    text.replace /// \b(#{stays})(#{goes})\b ///g, "$1"
+    text.replace ///
+        \b
+        (#{stays})
+        (#{goes})
+        \b
+      ///g,
+      "$1"
 
   say = (text) ->
     for line in text.split("\n")
