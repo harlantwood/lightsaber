@@ -1,6 +1,6 @@
 chai = require 'chai'
 chai.should()
-lightsaber = require '../lib/index.js'
+lightsaber = require '../index'
 { sha384 } = lightsaber
 
 describe 'sha384', ->
