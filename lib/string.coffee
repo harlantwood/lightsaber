@@ -1,10 +1,6 @@
-similar = (a, b) ->
-  console.log typeof a
-  console.log a
-  _trim(a.toLowerCase()) is _trim(b.toLowerCase())
+_ = require "lodash"
 
-# note: `_.trim` will be in a forthcoming version of lo-dash; switch to that when released
-_trim = (string) ->
-  String(string).replace /^\s+|\s+$/g, ""
+similar = (a, b) ->
+  _.trim(a.toLowerCase()) is _.trim(b.toLowerCase())
 
 module.exports = { similar }
