@@ -4,6 +4,7 @@ var _ = require('lodash');
 
 module.exports = _.merge(
   require('./lib/hash.coffee'),
+  require('./lib/lodash.coffee'),
   require('./lib/log.coffee'),
   require('./lib/object.coffee'),
   require('./lib/space.coffee'),
