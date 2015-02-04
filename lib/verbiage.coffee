@@ -1,5 +1,5 @@
-{ type }          = require './type'
-{ log, p }        = require './log'
+{ type }   = require './type'
+{ log, p } = require './log'
 
 code = (text, line_prefix='    ') ->
   log indent text, line_prefix

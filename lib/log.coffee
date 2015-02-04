@@ -1,4 +1,4 @@
-{ type }          = require './type'
+{ type } = require './type'
 
 log = (args...) ->
   for arg in args
