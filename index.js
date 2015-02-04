@@ -1,6 +1,6 @@
 require('coffee-script/register');  //# TODO only if in nodejs, not webpack
 
-var _ = require('lodash-node');
+var _ = require('lodash');
 
 module.exports = _.merge(
   require('./lib/hash.coffee'),
