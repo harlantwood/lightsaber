@@ -1,7 +1,6 @@
 chai = require 'chai'
 chai.should()
-lightsaber = require '../index'
-{ sha384 } = lightsaber
+{ sha384 } = require '../src/hash'
 
 describe 'sha384', ->
   it 'should hash strings as expected', ->

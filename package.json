@@ -4,14 +4,21 @@
   "description": "Lightweight jedi utility toolbelt, written in coffeescript",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./lib/",
+    "compile": "./node_modules/.bin/coffee -o lib/ src/",
+    "prepublish": "npm run compile",
     "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register spec"
   },
   "author": "Harlan T Wood",
   "license": "ISC",
   "dependencies": {
-    "coffee-script": "^1.8.0",
     "lodash": "^3.0.1",
     "node-forge": "^0.6.16"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "coffee-script": "^1.8.0",
+    "mocha": "^2.0.1"
   },
   "repository": {
     "type": "git",
@@ -26,9 +33,5 @@
   ],
   "bugs": {
     "url": "https://github.com/harlantwood/light/issues"
-  },
-  "devDependencies": {
-    "chai": "^1.10.0",
-    "mocha": "^2.0.1"
   }
 }
