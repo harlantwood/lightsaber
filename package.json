@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./lib/",
-    "compile": "./node_modules/.bin/coffee -o lib/ src/",
+    "compile": "./node_modules/.bin/coffee --output lib/ --compile src/",
     "prepublish": "npm run compile",
-    "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register spec"
+    "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register spec",
+    "watch": "./node_modules/.bin/coffee --watch --output lib/ --compile src/"
   },
   "author": "Harlan T Wood",
   "license": "ISC",
