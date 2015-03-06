@@ -1,20 +1,18 @@
 jsSHA = require "jssha"
 
-hash = (text, algorithm='SHA-512') ->
-  _digest text, { algorithm }
-
-sha384 = (text) ->
-  _digest text, algorithm: 'SHA-384'
-
-sha512 = (text) ->
-  _digest text, algorithm: 'SHA-512'
-
-_digest = (text, options) ->
+hash = (text, algorithm) ->
+  throw "No algorithm specified" unless algorithm
+  bits = algorithm.match(/^sha-?(\d+)$/i)?[1]  # matches sha384, SHA384, sha-384, SHA-384...
+  throw "Unknown algorithm '#{algorithm}'" unless bits
+  algorithm = "SHA-#{bits}"
   shaObj = new jsSHA text, "TEXT"
-  hash = shaObj.getHash options.algorithm, "HEX"
+  shaObj.getHash algorithm, "HEX"
 
-module.exports = {
-  hash
-  sha384
-  sha512
-}
+module.exports ?= {}
+
+for sha_type in [1, 224, 256, 384, 512]
+  do (sha_type) ->
+    algorithm = "sha#{sha_type}"
+    module.exports[algorithm] = (text) -> hash text, algorithm
+
+module.exports.hash = hash
