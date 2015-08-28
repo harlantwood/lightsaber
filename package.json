@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/harlantwood/light.git"
+    "url": "https://github.com/harlantwood/lightsaber.git"
   },
   "keywords": [
     "log",
@@ -33,6 +33,6 @@
     "sha512"
   ],
   "bugs": {
-    "url": "https://github.com/harlantwood/light/issues"
+    "url": "https://github.com/harlantwood/lightsaber/issues"
   }
 }
