@@ -4,6 +4,7 @@ module.exports = _.merge(
   require('./lib/constants'),
   require('./lib/hash'),
   require('./lib/log'),
+  require('./lib/shell'),
   require('./lib/space'),
   require('./lib/string'),
   require('./lib/type'),
