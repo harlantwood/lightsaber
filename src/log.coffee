@@ -8,7 +8,7 @@ err = (args...) ->
   for arg in args
     console.error arg
 
-p = plog = (args...) ->
+p = d = plog = (args...) ->
   for arg in args
     log pretty arg
 
@@ -27,4 +27,4 @@ json = (data, stringify_args...) ->
   catch
     data
 
-module.exports = { err, log, plog, p, pretty, json, pjson }
+module.exports = { d, err, log, plog, p, pretty, json, pjson }
