@@ -21,9 +21,10 @@ run = (command, options={}) ->
   result = exec command, merge(options, quiet: options.quietResponse)
 
   exitCode = result.code
-  if type(exitCode) isnt 'undefined' and exitCode isnt 0
+  if type(exitCode) isnt 'undefined' and exitCode isnt 0 and not options.relaxed
     console.error "COMMAND FAILED: #{ json {exitCode} }"
-    exit(exitCode) unless options.relaxed
+    exit(exitCode)
+
   result
 
 module.exports = {
