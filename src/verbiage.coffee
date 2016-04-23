@@ -9,12 +9,12 @@ indent = (text, line_prefix='    ') ->
     "#{line_prefix}#{line}"
   lines.join "\n"
 
-# replace probable hex hashes with the first n characters of the hash only
-sane = (text, size=8) ->
+# replace probable hex hashes with the first `chars` characters of the hash only
+sane = (text, chars=8) ->
   throw "expected string, got #{text}" unless type(text) is 'string'
-  stays = "[0-9a-f]{#{size}}"
-  goes = [128, 160, 256, 384, 512].map (bits) ->
-    "[0-9a-f]{#{ bits/4 - size }}"
+  stays = "[0-9a-f]{#{chars}}"
+  goes = [160, 256, 384, 512].map (bits) ->
+    "[0-9a-f]{#{ bits/4 - chars }}"
   .join '|'
   text.replace ///
       \b
