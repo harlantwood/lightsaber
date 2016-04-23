@@ -1,6 +1,6 @@
 {
   "name": "lightsaber",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Lightweight jedi utility toolbelt, written in coffeescript",
   "main": "index.js",
   "scripts": {
