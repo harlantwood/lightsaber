@@ -1,8 +1,12 @@
 bs58 = require 'bs58'
 secureRandom = require 'secure-random'
+{defaults} = require 'lodash'
 
-key = (bits=256) ->
+randomKey = (args = {}) ->
+  defaults args,
+    bits: 256
+
   bytes = Math.ceil(bits/4)
   bs58.encode secureRandom.randomBuffer bytes
 
-module.exports = {key}
+module.exports = {randomKey}
