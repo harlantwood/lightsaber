@@ -6,7 +6,7 @@ randomKey = (args = {}) ->
   defaults args,
     bits: 256
 
-  bytes = Math.ceil(bits/4)
+  bytes = Math.ceil(args.bits / 4)
   bs58.encode secureRandom.randomBuffer bytes
 
 module.exports = {randomKey}
