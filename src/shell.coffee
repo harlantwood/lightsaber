@@ -18,7 +18,7 @@ run = (command, options={}) ->
     prettyCommand = chalk.green prettyCommand if options.color
     console.log prettyCommand
 
-  result = exec command, merge(options, quiet: options.quietResponse)
+  result = exec command, merge(options, silent: options.quietResponse)
 
   exitCode = result.code
   if type(exitCode) isnt 'undefined' and exitCode isnt 0 and not options.relaxed
