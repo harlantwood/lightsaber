@@ -5,8 +5,9 @@ hash = (text, algorithm) ->
   bits = algorithm.match(/^sha-?(\d+)$/i)?[1]  # matches sha384, SHA384, sha-384, SHA-384...
   throw "Unknown algorithm '#{algorithm}'" unless bits
   algorithm = "SHA-#{bits}"
-  shaObj = new jsSHA text, "TEXT"
-  shaObj.getHash algorithm, "HEX"
+  shaObj = new jsSHA algorithm, "TEXT"
+  shaObj.update text
+  shaObj.getHash "HEX"
 
 module.exports ?= {}
 
