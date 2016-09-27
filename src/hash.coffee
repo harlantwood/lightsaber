@@ -1,4 +1,9 @@
 jsSHA = require "jssha"
+multihashing = require 'multihashing'
+Buffer = require('buffer/').Buffer
+bs58 = require 'bs58'
+
+module.exports = {}
 
 hash = (text, algorithm) ->
   throw "No algorithm specified" unless algorithm
@@ -9,11 +14,17 @@ hash = (text, algorithm) ->
   shaObj.update text
   shaObj.getHash "HEX"
 
-module.exports ?= {}
+multihash = (data, algorithm = 'sha2-256') ->
+  buffer = new Buffer data
+  digest = multihashing buffer, algorithm
+  bs58.encode digest
+
+module.exports = {
+  hash,
+  multihash
+}
 
 for sha_type in [1, 224, 256, 384, 512]
   do (sha_type) ->
     algorithm = "sha#{sha_type}"
     module.exports[algorithm] = (text) -> hash text, algorithm
-
-module.exports.hash = hash
