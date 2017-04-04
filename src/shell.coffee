@@ -13,6 +13,8 @@ run = (command, options={}) ->
     quietCommand: options.quiet ? false
     quietResponse: options.quiet ? false
 
+  command = command.replace /\s+/g, ' '
+
   unless options.quietCommand
     prettyCommand = "\n==> #{command}   #{if isEmpty(originalOptions) then '' else '# '+json(originalOptions)}"
     prettyCommand = chalk.green prettyCommand if options.color

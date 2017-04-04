@@ -2,7 +2,7 @@
   "name": "lightsaber",
   "version": "0.6.8",
   "description": "Lightweight jedi utility toolbelt",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf ./lib/",
     "compile": "coffee --output lib/ --compile src/",
