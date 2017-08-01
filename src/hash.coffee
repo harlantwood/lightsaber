@@ -6,9 +6,9 @@ bs58 = require 'bs58'
 module.exports = {}
 
 hash = (text, algorithm) ->
-  throw "No algorithm specified" unless algorithm
+  throw new Error("No algorithm specified") unless algorithm
   bits = algorithm.match(/^sha-?(\d+)$/i)?[1]  # matches sha384, SHA384, sha-384, SHA-384...
-  throw "Unknown algorithm '#{algorithm}'" unless bits
+  throw new Error("Unknown algorithm '#{algorithm}'") unless bits
   algorithm = "SHA-#{bits}"
   shaObj = new jsSHA algorithm, "TEXT"
   shaObj.update text
