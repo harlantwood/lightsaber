@@ -35,5 +35,8 @@
   "keywords": [],
   "bugs": {
     "url": "https://github.com/harlantwood/lightsaber/issues"
+  },
+  "engines": {
+    "node": ">= 4"
   }
 }
