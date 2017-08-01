@@ -1,4 +1,5 @@
 { type } = require './type'
+{ stringify } = require 'circular-json'
 
 log = (args...) ->
   for arg in args
@@ -23,7 +24,7 @@ pjson = (data) ->
 
 json = (data, stringify_args...) ->
   try
-    JSON.stringify data, stringify_args...
+    stringify data, stringify_args...
   catch
     data
 
