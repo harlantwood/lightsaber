@@ -1,6 +1,6 @@
 {
   "name": "lightsaber",
-  "version": "0.6.11",
+  "version": "0.7.0",
   "description": "Lightweight jedi utility toolbelt",
   "main": "lib/index.js",
   "browser": "lib/browser.js",
