@@ -3,6 +3,7 @@
   "version": "0.6.10",
   "description": "Lightweight jedi utility toolbelt",
   "main": "lib/index.js",
+  "browser": "lib/browser.js",
   "scripts": {
     "clean": "rm -rf ./lib/",
     "compile": "coffee --output lib/ --compile src/",
