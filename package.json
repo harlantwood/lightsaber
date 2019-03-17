@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf ./lib/",
     "compile": "coffee --output lib/ --compile src/",
-    "prepublish": "npm run compile",
+    "prepublishOnly": "yarn compile",
     "test": "mocha --recursive --compilers coffee:coffee-script/register spec",
     "watch": "coffee --watch --output lib/ --compile src/"
   },
@@ -38,6 +38,6 @@
     "url": "https://github.com/harlantwood/lightsaber/issues"
   },
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   }
 }
