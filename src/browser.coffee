@@ -5,7 +5,6 @@ module.exports = merge(
   require('./hash'),
   require('./key'),
   require('./log'),
-  require('./node'),
   require('./space'),
   require('./string'),
   require('./type'),
