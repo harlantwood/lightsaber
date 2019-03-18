@@ -1,5 +1,5 @@
 jsSHA = require "jssha"
-multihashing = require 'multihashing/dist'
+multihashing = require 'multihashing'
 Buffer = require('buffer/').Buffer
 bs58 = require 'bs58'
 
